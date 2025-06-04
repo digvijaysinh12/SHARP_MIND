@@ -16,7 +16,12 @@ public class treeBFSTraversal {
                 //  4   5   6
 
 
-        PreOrderTraversal(root);
+        System.out.print("PreorderTraversal ==> ");
+         PreOrderTraversal(root);
+        System.out.println();
+        System.out.print("inorderTraversal ==> ");
+        inorderTraversal(root);
+
     }
 
 
@@ -25,9 +30,18 @@ public class treeBFSTraversal {
             return;
         }
 
-        System.out.println(root.data);
+        System.out.print("  "+root.data+"  ");
         PreOrderTraversal(root.left);
         PreOrderTraversal(root.right);
+    }
+
+    static void inorderTraversal(Node root){
+        if(root == null){
+            return;
+        }
+        inorderTraversal(root.left);
+        System.out.print("  "+root.data+"  ");
+        inorderTraversal(root.right);
     }
 
     
