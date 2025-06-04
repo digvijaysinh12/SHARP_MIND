@@ -21,6 +21,9 @@ public class treeBFSTraversal {
         System.out.println();
         System.out.print("inorderTraversal ==> ");
         inorderTraversal(root);
+        System.out.println();
+        System.out.print("postorderTraversal ==> ");
+        postorderTraversal(root);
 
     }
 
@@ -44,7 +47,15 @@ public class treeBFSTraversal {
         inorderTraversal(root.right);
     }
 
-    
+    static void postorderTraversal(Node root){
+        if(root == null){
+            return;
+        }
+
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
+        System.out.print("  "+root.data+"  ");
+    }
 
 }
 
